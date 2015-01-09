@@ -1,0 +1,86 @@
+<section data-ng-controller="BusiappsController" data-ng-init="findOne()">
+
+  <h2>{{busiapp.SERVICE_OR_APPLICATION_NAME}}</a>
+    <span data-ng-if="hasAuthorization(busiapp)">
+      <a class="btn" href="/#!/busiapps/{{busiapp._id}}/edit">
+        <i class="glyphicon glyphicon-edit"></i>
+      </a>
+      <a class="btn" data-ng-click="remove(busiapp);">
+        <i class="glyphicon glyphicon-trash"></i>
+      </a>
+    </span>
+  </h2>
+  <small>
+  <span>Record created reated: {{busiapp.created | date:'medium'}}</span> by
+  <span>{{busiapp.user.name}}</span>
+  </small>
+  
+  <div class="row">
+
+  <table class="table table-striped">
+    <tr><td>Status:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.STATUS"></span></strong></td></tr>
+    <tr><td>APPID:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.APP_ID"></span></strong></td></tr>
+    <tr><td>Name:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.SERVICE_OR_APPLICATION_NAME"></span></strong></td></tr>
+    <tr><td>Acroynm:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.SERVICE_OR_APPLICATION_ACRONYM"></span></strong></td></tr>
+    <tr><td>Type:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.ASSET_TYPE"></span></strong></td></tr>
+    <tr><td>Criticality:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.BUSINESS_CRITICALITY"></span></strong></td></tr>
+    <tr><td>BIA Tier:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.BIA_TIER"></span></strong></td></tr>
+    <tr><td>Design Tier:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.DESIGN_TIER"></span></strong></td></tr>
+    <tr><td>RPO:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.CLIENT_RPO"></span></strong></td></tr>
+    <tr><td>RTO:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.CLIENT_RTO"></span></strong></td></tr>
+    <tr><td>Process:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.PROCESS"></span></strong></td></tr>
+    <tr><td>IT Core:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.IT_CORE_SERVICE"></span></strong></td></tr>
+    <tr><td>Info Classification:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.INFORMATION_CLASSIFICATION"></span></strong></td></tr>
+    <tr><td>Compliance:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.COMPLIANCE_REQUIREMENTS"></span></strong></td></tr>
+    <tr><td>LOB:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.LINE_OF_BUSINESS"></span></strong></td></tr>
+    <tr><td>LOB Owner:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.CLIENT_OWNER"></span></strong></td></tr>
+    <tr><td>Managed by:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.MANAGED_BY"></span></strong></td></tr>
+    <tr><td>IT Lead:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.IT_LEAD"></span></strong></td></tr>
+    <tr><td>IT Director:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.IT_DIRECTOR"></span></strong></td></tr>
+    <tr><td>IT Group:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.IT_GROUP"></span></strong></td></tr>
+    <tr><td>IT SME:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.IT_SME"></span></strong></td></tr>
+    <tr><td>IT SME Bkup:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.IT_SME_BU"></span></strong></td></tr>
+    <tr><td>Network:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.NETWORK"></span></strong></td></tr>
+    <tr><td>Primary DC:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.PRIMARY_DC"></span></strong></td></tr>
+    <tr><td>Secondary DC:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.SECONDARY_DC"></span></strong></td></tr>
+    <tr><td>BSM Onboarded:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.ONBOARD_FLAG"></span></strong></td></tr>
+    <tr><td>BSM Display Name:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.DISPLAY_NAME"></span></strong></td></tr>
+    <tr><td>Description:</td><td><strong><span class="text-primary" data-ng-bind="busiapp.ASSET_DESCRIPTION"></span></strong></td></tr>
+  </table>
+
+  </div>
+
+</section>
+
+<!-- 
+
+  APP_ID                          : this.APP_ID,
+  SERVICE_OR_APPLICATION_NAME     : this.SERVICE_OR_APPLICATION_NAME,
+  BUSINESS_CRITICALITY            : this.BUSINESS_CRITICALITY,
+  STATUS                          : this.STATUS,
+  INFORMATION_CLASSIFICATION      : this.INFORMATION_CLASSIFICATION,
+  COMPLIANCE_REQUIREMENTS         : this.COMPLIANCE_REQUIREMENTS,
+  BIA_TIER                        : this.BIA_TIER  ,
+  DESIGN_TIER                     : this.DESIGN_TIER  ,
+  MANAGED_BY                      : this.MANAGED_BY  ,
+  IT_LEAD                         : this.IT_LEAD   ,
+  ASSET_TYPE                      : this.ASSET_TYPE  ,
+  IT_DIRECTOR                     : this.IT_DIRECTOR  ,
+  LINE_OF_BUSINESS                : this.LINE_OF_BUSINESS,
+  CLIENT_OWNER                    : this.CLIENT_OWNER ,
+  CLIENT_RPO                      : this.CLIENT_RPO  ,
+  CLIENT_RTO                      : this.CLIENT_RTO  ,
+  NETWORK                         : this.NETWORK   ,
+  IT_GROUP                        : this.IT_GROUP  ,
+  PRIMARY_DC                      : this.PRIMARY_DC  ,
+  SECONDARY_DC                    : this.SECONDARY_DC ,
+  PROCESS                         : this.PROCESS   ,
+  ASSET_DESCRIPTION               : this.ASSET_DESCRIPTION,
+  IT_CORE_SERVICE                 : this.IT_CORE_SERVICE ,
+  IT_SME                          : this.IT_SME,
+  IT_SME_BU                       : this.IT_SME_BU,
+  ONBOARD_FLAG                    : this.ONBOARD_FLAG ,
+  SERVICE_OR_APPLICATION_ACRONYM  : this.SERVICE_OR_APPLICATION_ACRONYM,
+  DISPLAY_NAME                    : this.DISPLAY_NAME     
+
+ -->

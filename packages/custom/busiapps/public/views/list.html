@@ -1,0 +1,103 @@
+<section data-ng-controller="BusiappsController" data-ng-init="find()">
+  <div class="col-md-12">
+    <h1>Business Applications</h1>
+    <h3>&nbsp;</h3>
+  </div>
+
+  <div class="col-xs-12 col-sm-8">
+
+    <div class="row">
+      <div class="input-group input-group-lg">
+        <input type="text" class="form-control" placeholder="Filter the {{busiapps.length}} Business Applications" ng-model="searchText">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">GO</button>
+        </span>
+      </div><!-- /input-group -->
+
+        <p><small>Use this to filter the list. The filter covers all fields.</small></p>
+        <br>
+
+    </div>
+
+  </div>
+
+  <table class="table table-hover">
+    <tr data-ng-repeat="busiapp in filtered = (busiapps | filter:searchText | orderBy: 'SERVICE_OR_APPLICATION_NAME') ">
+    <td ng-click="displayToggle=!displayToggle">
+        <h3 class="text-primary">
+          {{busiapp.SERVICE_OR_APPLICATION_NAME}}
+          <span data-ng-if="hasAuthorization(busiapp)">
+            <a class="btn" href="/#!/busiapps/{{busiapp._id}}/edit">
+              <i class="glyphicon glyphicon-edit"></i>
+            </a>
+            <a class="btn" data-ng-click="remove(busiapp);">
+              <i class="glyphicon glyphicon-trash"></i>
+            </a>
+          </span>
+        </h3>
+        <small>Long name: <strong><span data-ng-bind="busiapp.DISPLAY_NAME" class="text-primary"></span></strong> |   
+        IT Owner: <strong><span data-ng-bind="busiapp.IT_LEAD" class="text-primary"></span></strong>
+        <br/>
+        PROCESS: <strong><span data-ng-bind="busiapp.PROCESS" class="text-primary"></span></strong> | LOB:  <strong><span data-ng-bind="busiapp.LINE_OF_BUSINESS" class="text-primary"></span></strong>
+        <br />
+        </small>
+          <!-- ################### -->
+          <!-- expansion container -->
+          <!-- ################### -->
+          <div class="container">
+            <div class="slide-tile"
+                  ng-show="displayToggle">
+              <br />
+              <p>Acronym: <strong><span data-ng-bind="busiapp.SERVICE_OR_APPLICATION_ACRONYM" class="text-primary"></span></strong></p>
+              <p>APPID: <strong><span data-ng-bind="busiapp.APP_ID" class="text-primary"></span></strong> / Status: <strong><span data-ng-bind="busiapp.STATUS" class="text-primary"></span></strong></p>
+              <p>Criticality: <strong><span data-ng-bind="busiapp.BUSINESS_CRITICALITY" class="text-primary"></span></strong> / BIA TIER:  <strong><span data-ng-bind="busiapp.BIA_TIER" class="text-primary"></span></strong></p>
+              <p>Asset Type: <strong><span data-ng-bind="busiapp.ASSET_TYPE" class="text-primary"></span></strong></p>
+              <p>Datacenters - Primary : <strong><span data-ng-bind="busiapp.PRIMARY_DC" class="text-primary"></span></strong> / Secondary: <strong><span data-ng-bind="busiapp.SECONDARY_DC" class="text-primary"></span></strong></p>
+              <p><small>Description: <strong><span>{{busiapp.ASSET_DESCRIPTION}}</span></strong></small></p>
+              <p><small>Record created: <strong><span>{{busiapp.created | date:'medium'}}</span></strong> | Record Updated <strong><span>{{busiapp.updated}}</span></strong> by <span><strong>{{busiapp.user.name}}</strong></span>
+              </small></p>
+              <p><a data-ng-href="#!/busiapps/{{busiapp._id}}"><button class="btn" type="button"><i class="glyphicon glyphicon-info-sign"></i> All Details</button></a></p> 
+            </div>
+          </div><!-- expansion area -->      
+    </td>
+    </tr>
+  </table>
+
+  <h1 data-ng-hide="!busiapps || busiapps.length">No busiapps yet. <br> Why don't you <a href="/#!/busiapps/create">Create One</a>?</h1>
+
+
+</section>
+
+
+<!-- 
+
+  APP_ID                          : this.APP_ID,
+  SERVICE_OR_APPLICATION_NAME     : this.SERVICE_OR_APPLICATION_NAME,
+  BUSINESS_CRITICALITY            : this.BUSINESS_CRITICALITY,
+  STATUS                          : this.STATUS,
+  INFORMATION_CLASSIFICATION      : this.INFORMATION_CLASSIFICATION,
+  COMPLIANCE_REQUIREMENTS         : this.COMPLIANCE_REQUIREMENTS,
+  BIA_TIER                        : this.BIA_TIER  ,
+  DESIGN_TIER                     : this.DESIGN_TIER  ,
+  MANAGED_BY                      : this.MANAGED_BY  ,
+  IT_LEAD                         : this.IT_LEAD   ,
+  ASSET_TYPE                      : this.ASSET_TYPE  ,
+  IT_DIRECTOR                     : this.IT_DIRECTOR  ,
+  LINE_OF_BUSINESS                : this.LINE_OF_BUSINESS,
+  CLIENT_OWNER                    : this.CLIENT_OWNER ,
+  CLIENT_RPO                      : this.CLIENT_RPO  ,
+  CLIENT_RTO                      : this.CLIENT_RTO  ,
+  NETWORK                         : this.NETWORK   ,
+  IT_GROUP                        : this.IT_GROUP  ,
+  PRIMARY_DC                      : this.PRIMARY_DC  ,
+  SECONDARY_DC                    : this.SECONDARY_DC ,
+  PROCESS                         : this.PROCESS   ,
+  ASSET_DESCRIPTION               : this.ASSET_DESCRIPTION,
+  IT_CORE_SERVICE                 : this.IT_CORE_SERVICE ,
+  IT_SME                          : this.IT_SME,
+  IT_SME_BU                       : this.IT_SME_BU,
+  ONBOARD_FLAG                    : this.ONBOARD_FLAG ,
+  SERVICE_OR_APPLICATION_ACRONYM  : this.SERVICE_OR_APPLICATION_ACRONYM,
+  DISPLAY_NAME                    : this.DISPLAY_NAME     
+
+ -->

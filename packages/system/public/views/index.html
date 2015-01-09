@@ -1,0 +1,186 @@
+<section class="container-fluid" data-ng-controller="IndexController">
+  <div class="col-md-12 first text-center content-primary">
+    <h1>Asset Management for IT!</h1>
+    <h1>&nbsp;</h1>
+  </div>
+
+  <div class="col-md-12 text-center">
+    <div class="col-md-4 text-center"><a href="/#!/busiapps" class="btn btn-primary btn-lg">Applications</a></div>
+    <div class="col-md-4 text-center"><a href="/#!/lobs" class="btn btn-primary btn-lg">LOBs</a></div>
+    <div class="col-md-4 text-center"><a href="/#!/processes" class="btn btn-primary btn-lg">Processes</a></div>
+    <h1>&nbsp;</h1>
+  </div>
+
+  <div class="row"><!-- Main Row -->
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8"><!-- Asset Family Column -->
+      <h2><i class="glyphicon glyphicon-road"></i> Asset Families</h2>
+      <p>See specific information about each of the Foundational Technology and Business Enablement Asset Families</p>
+
+      <div class="row">
+        <div class="col-sm-6" ng-click="displayToggleNet=!displayToggleNet" ng-mouseover="myStyleNet={'background-color':'#eee'}"} ng-style="myStyleNet" ng-mouseleave="myStyleNet={'background-color':'white'}">
+          <h4><i class="glyphicon glyphicon-link"></i> NETWORK TECHNOLOGIES</h4>
+          <p>Network assets. <span class="text-primary"> 
+          <br>
+          <small>Click to view Sub-families</small> </span> </p>
+          <div ng-show="displayToggleNet">          
+            <ul>
+              <li>IP Network</li>
+              <li>Transmission Systems</li>
+              <li>Radio</li>
+              <li>PBX / Telephony</li>
+              <li>AMI / SmartMeter</li>
+              <li>Operational Network</li>
+              <li>Common Facilities</li>
+            </ul>
+            <p><span class="pull-right"><a href="/#!/" class="btn btn-info">Everything</a></span></p>
+            <br /><br>
+          </div>
+        </div>
+
+        <div class="col-sm-6" ng-click="displayToggleDC=!displayToggleDC" ng-mouseover="myStyleDC={'background-color':'#eee'}"} ng-style="myStyleDC" ng-mouseleave="myStyleDC={'background-color':'white'}">
+          <H4><i class="glyphicon glyphicon-cloud"></i> DATACENTER TECHNOLOGIES</H4>
+          <p>Datacenter assets. <span class="text-primary"> 
+          <br>
+          <small>Click to view Sub-families</small> </span></p>
+          <div ng-show="displayToggleDC">          
+            <ul>
+              <li>Cloud</li>
+              <li>Application Hosting</li>
+              <li>Database</li>
+              <li>Converged Infra / Servers</li>
+              <li>Storage</li>
+              <li>Datacenter Facilities</li>
+            </ul>
+            <span class="pull-right"><a href="/#!/lobs" class="btn btn-info">Everything</a></span>
+            <br /><br>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6" ng-click="displayToggleUser=!displayToggleUser" ng-mouseover="myStyleUser={'background-color':'#eee'}"} ng-style="myStyleUser" ng-mouseleave="myStyleUser={'background-color':'white'}">
+          <h4><i class="glyphicon glyphicon-user"></i> USER TECHNOLOGIES</h4>
+          <p>User technologies - laptops, desktops, printers, collaboration tools. <span class="text-primary"> 
+          <br>
+          <small>Click to view Sub-families</small> </span></p>
+          <div ng-show="displayToggleUser">          
+            <ul>
+              <li>Laptops / Desktops</li>
+              <li>Field Mobile</li>
+              <li>Consumer Mobile</li>
+              <li>Printing / Imaging</li>
+              <li>Communication, Collaboration, Social</li>
+            </ul>
+            <span class="pull-right"><a href="/#!/" class="btn btn-info">Everything</a></span>
+            <br /><br>
+          </div>
+        </div>
+
+        <div class="col-sm-6" ng-click="displayToggleSec=!displayToggleSec" ng-mouseover="myStyleSec={'background-color':'#eee'}"} ng-style="myStyleSec" ng-mouseleave="myStyleSec={'background-color':'white'}">
+          <H4><i class="glyphicon glyphicon-lock"></i> SECURITY TECHNOLOGIES</H4>
+          <p>Security technologies and services. <span class="text-primary"> 
+          <br>
+          <small>Click to view Sub-families</small> </span></p>
+          <div ng-show="displayToggleSec">
+            <ul>
+              <li>Application Protection</li>
+              <li>Network Protection</li>
+              <li>Infrastructure Protection</li>
+              <li>Security Intelligence & Monitoring</li>
+              <li>Information Protection</li>
+            </ul>
+            <span class="pull-right"><a href="/#!/" class="btn btn-info">Everything</a></span>
+            <br /><br>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6" ng-click="displayToggleInfo=!displayToggleInfo" ng-mouseover="myStyleInfo={'background-color':'#eee'}"} ng-style="myStyleInfo" ng-mouseleave="myStyleInfo={'background-color':'white'}">
+          <h4><i class="glyphicon glyphicon-info-sign"></i> INFORMATION MANAGEMENT</h4>
+          <p>Information management, records mgmt, integration, taxonomies, metadata, etc. <span class="text-primary"> 
+          <br>
+          <small>Click to view Sub-families</small> </span></p>
+          <div ng-show="displayToggleInfo">          
+            <ul>
+              <li>Integration</li>
+              <li>Records Mgmt</li>
+              <li>Data Mgmt</li>
+              <li>...</li>
+              <li>....</li>
+            </ul>
+            <span class="pull-right"><a href="/#!/" class="btn btn-info">Everything</a></span>
+            <br /><br>
+          </div>
+        </div>
+
+        <div class="col-sm-6" ng-click="displayToggleMob=!displayToggleMob" ng-mouseover="myStyleMob={'background-color':'#eee'}"} ng-style="myStyleMob" ng-mouseleave="myStyleMob={'background-color':'white'}">
+          <H4><i class="glyphicon glyphicon-phone"></i> ENTERPRISE MOBILE</H4>
+          <p>Enterprise Mobile management, development and user experience.. <span class="text-primary"> 
+          <br>
+          <small>Click to view Sub-families</small> </span></p>
+          <div ng-show="displayToggleMob">          
+            <ul>
+              <li>Mobile Mgmt (Device and Application)</li>
+              <li>Mobile Development</li>
+              <li>Mobile User Experience</li>
+            </ul>
+            <span class="pull-right"><a href="/#!/" class="btn btn-info">Everything</a></span>
+            <br /><br>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6" ng-click="displayToggleTools=!displayToggleTools" ng-mouseover="myStyleTools={'background-color':'#eee'}"} ng-style="myStyleTools" ng-mouseleave="myStyleTools={'background-color':'white'}">
+          <h4><i class="glyphicon glyphicon-wrench"></i> IT OPERATIONAL TOOLS</h4>
+          <p>IMonitoring, Management, Performance, Automation, Discovery and Ticketing Tools. <span class="text-primary"> 
+          <br>
+          <small>Click to view Sub-families</small> </span></p>
+          <div ng-show="displayToggleTools">          
+            <ul>
+              <li>System Mgmt</li>
+              <li>Discovery & Dependency Mapping</li>
+              <li>Monitoring & Assurance</li>
+              <li>Situational Awareness</li>
+              <li>Automation</li>
+              <li>IT Service Mgmt</li>
+            </ul>
+            <span class="pull-right"><a href="/#!/" class="btn btn-info">Everything</a></span>
+            <br /><br>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.Asset Family Column -->
+
+    <div class="ol-xs-12 col-sm-12 col-md-4 col-lg-4"><!-- Documentation / Information Column -->
+
+      <h2><i class="glyphicon glyphicon-book"></i> Documentation</h2>
+      <p>A comprehensive list of documentation on how to use this site. This includes the API layers, support information, and how to provide feedback, input, and bugreports.</p>
+      <div class="docs-link">
+        <ul>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">References</a></li>
+        </ul>
+      </div>
+      <div class="docs-link">
+        <ul>
+          <li><a href="#">Use Cases</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="docs-link">
+        <ul>
+          <li><a href="#">Inventory of Inventories</a></li>
+        </ul>
+      </div>
+      <span class="morelink"><a href="/#!/docs">All Documentation</a></span>
+
+    </div><!-- /.Documentation / Information Column -->
+
+  </div><!-- /.row -->
+
+</section>

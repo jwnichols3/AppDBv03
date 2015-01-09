@@ -1,0 +1,14 @@
+<section data-ng-controller="ProcessesController" data-ng-init="findOne()">
+  <span>{{process.created | date:'medium'}}</span> /
+  <span>{{process.user.name}}</span>
+  <h2>{{process.name}}</h2>
+  <div data-ng-if="hasAuthorization(process)">
+    <a class="btn" href="/#!/processes/{{process._id}}/edit">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn" data-ng-click="remove(process);">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div>{{process.description}}</div>
+</section>

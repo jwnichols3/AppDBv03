@@ -1,0 +1,48 @@
+<section data-ng-controller="ProcessesController" data-ng-init="find()">
+
+  <div class="col-xs-12 col-sm-8">
+
+    <div class="row">
+      <div class="input-group input-group-lg">
+        <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+      </div><!-- /input-group -->
+
+    </div>
+
+  </div>
+
+  <div class="col-xs-12 col-sm-4 text-center">
+    <a href="/#!/processes/create">
+    <button type="button" class="btn btn-success text-center">
+    
+    <i class="glyphicon glyphicon-briefcase"></i>
+    <br />
+    New Process
+    </button>
+    </a>
+  </div>
+
+  <div class="col-xs-12 col-sm-8">
+  <ul class="processes unstyled" id="searchTextResults">
+    <li data-ng-repeat="process in processes | filter:searchText">
+      <span>{{process.created | date:'medium'}}</span> /
+      <span>{{process.user.name}}</span>
+      <h2>
+        <a data-ng-href="#!/processes/{{process._id}}">{{process.name}}</a>
+        <span data-ng-if="hasAuthorization(process)">
+          <a class="btn" href="/#!/processes/{{process._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn" data-ng-click="remove(process);">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </span>
+      </h2>
+      <div>{{process.description}}</div>
+    </li>
+  </ul>
+  <h1 data-ng-hide="!processes || processes.length">No processes yet. <br> Why don't you <a href="/#!/processes/create">Create One</a>?</h1>
+</section>
