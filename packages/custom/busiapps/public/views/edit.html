@@ -1,5 +1,360 @@
 <section data-ng-controller="BusiappsController" data-ng-init="findOne()">
   <form name="busiappForm" class="form-horizontal col-md-6" role="form" data-ng-submit="update(busiappForm.$valid)" novalidate>
+
+    <!-- App Name -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.SERVICE_OR_APPLICATION_NAME.$invalid }">
+
+      <label mean-token="'create-SERVICE_OR_APPLICATION_NAME'" class="col-md-3 control-label">Application Name</label>
+
+      <div class="col-md-9">
+        <input name="SERVICE_OR_APPLICATION_NAME" type="text" class="form-control" data-ng-model="busiapp.SERVICE_OR_APPLICATION_NAME" id="SERVICE_OR_APPLICATION_NAME" placeholder="Application Name" required>
+        <div ng-show="submitted && busiappForm.SERVICE_OR_APPLICATION_NAME.$invalid" class="help-block">
+          <p ng-show="busiappForm.SERVICE_OR_APPLICATION_NAME.$error.required">Application Name is required</p>
+        </div>
+      </div>
+
+    </div><!-- App Name -->
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.APP_ID.$invalid }">
+
+      <label mean-token="'create-APP_ID'" for="APP_ID" class="col-md-3 control-label">APP_ID</label>
+
+      <div class="col-md-9">
+        <textarea name="APP_ID" data-ng-model="busiapp.APP_ID" id="APP_ID" cols="10" rows="11" placeholder="APP_ID" class="form-control" required></textarea>
+        <div ng-show="submitted && busiappForm.APP_ID.$invalid" class="help-block">
+          <p ng-show="busiappForm.APP_ID.$error.required">APP_ID is required</p>
+        </div>
+      </div>
+
+    </div><!-- APP_ID -->
+
+    <!-- SERVICE_OR_APPLICATION_ACRONYM -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.SERVICE_OR_APPLICATION_ACRONYM.$invalid }">
+
+      <label mean-token="'create-SERVICE_OR_APPLICATION_ACRONYM'" for="SERVICE_OR_APPLICATION_ACRONYM" class="col-md-3 control-label">SERVICE_OR_APPLICATION_ACRONYM</label>
+
+      <div class="col-md-9">
+        <textarea name="SERVICE_OR_APPLICATION_ACRONYM" data-ng-model="busiapp.SERVICE_OR_APPLICATION_ACRONYM" id="SERVICE_OR_APPLICATION_ACRONYM" cols="100" rows="1" placeholder="SERVICE_OR_APPLICATION_ACRONYM" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.SERVICE_OR_APPLICATION_ACRONYM.$invalid" class="help-block">
+          <p ng-show="busiappForm.SERVICE_OR_APPLICATION_ACRONYM.$error.required">SERVICE_OR_APPLICATION_ACRONYM is required</p>
+        </div>
+      </div>
+    </div><!-- SERVICE_OR_APPLICATION_ACRONYM -->
+
+    <!-- ASSET_TYPE -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.ASSET_TYPE.$invalid }">
+
+      <label mean-token="'create-ASSET_TYPE'" for="ASSET_TYPE" class="col-md-3 control-label">ASSET_TYPE</label>
+
+      <div class="col-md-9">
+        <textarea name="ASSET_TYPE" data-ng-model="busiapp.ASSET_TYPE" id="ASSET_TYPE" cols="100" rows="1" placeholder="ASSET_TYPE" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.ASSET_TYPE.$invalid" class="help-block">
+          <p ng-show="busiappForm.ASSET_TYPE.$error.required">ASSET_TYPE is required</p>
+        </div>
+      </div>
+    </div><!-- ASSET_TYPE -->
+
+    <!-- BUSINESS_CRITICALITY -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.BUSINESS_CRITICALITY.$invalid }">
+
+      <label mean-token="'create-BUSINESS_CRITICALITY'" for="BUSINESS_CRITICALITY" class="col-md-3 control-label">BUSINESS_CRITICALITY</label>
+
+      <div class="col-md-9">
+        <textarea name="BUSINESS_CRITICALITY" data-ng-model="busiapp.BUSINESS_CRITICALITY" id="BUSINESS_CRITICALITY" cols="100" rows="1" placeholder="BUSINESS_CRITICALITY" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.BUSINESS_CRITICALITY.$invalid" class="help-block">
+          <p ng-show="busiappForm.BUSINESS_CRITICALITY.$error.required">BUSINESS_CRITICALITY is required</p>
+        </div>
+      </div>
+    </div><!-- BUSINESS_CRITICALITY -->
+
+    <!-- BIA_TIER -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.BIA_TIER.$invalid }">
+
+      <label mean-token="'create-BIA_TIER'" for="BIA_TIER" class="col-md-3 control-label">BIA_TIER</label>
+
+      <div class="col-md-9">
+        <textarea name="BIA_TIER" data-ng-model="busiapp.BIA_TIER" id="BIA_TIER" cols="100" rows="1" placeholder="BIA_TIER" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.BIA_TIER.$invalid" class="help-block">
+          <p ng-show="busiappForm.BIA_TIER.$error.required">BIA_TIER is required</p>
+        </div>
+      </div>
+    </div><!-- BIA_TIER -->
+
+    <!-- DESIGN_TIER -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.DESIGN_TIER.$invalid }">
+
+      <label mean-token="'create-DESIGN_TIER'" for="DESIGN_TIER" class="col-md-3 control-label">DESIGN_TIER</label>
+
+      <div class="col-md-9">
+        <textarea name="DESIGN_TIER" data-ng-model="busiapp.DESIGN_TIER" id="DESIGN_TIER" cols="100" rows="1" placeholder="DESIGN_TIER" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.DESIGN_TIER.$invalid" class="help-block">
+          <p ng-show="busiappForm.DESIGN_TIER.$error.required">DESIGN_TIER is required</p>
+        </div>
+      </div>
+    </div><!-- DESIGN_TIER -->
+
+    <!-- CLIENT_RPO -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.CLIENT_RPO.$invalid }">
+
+      <label mean-token="'create-CLIENT_RPO'" for="CLIENT_RPO" class="col-md-3 control-label">CLIENT_RPO</label>
+
+      <div class="col-md-9">
+        <textarea name="CLIENT_RPO" data-ng-model="busiapp.CLIENT_RPO" id="CLIENT_RPO" cols="100" rows="1" placeholder="CLIENT_RPO" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.CLIENT_RPO.$invalid" class="help-block">
+          <p ng-show="busiappForm.CLIENT_RPO.$error.required">CLIENT_RPO is required</p>
+        </div>
+      </div>
+    </div><!-- CLIENT_RPO -->
+
+    <!-- CLIENT_RTO -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.CLIENT_RTO.$invalid }">
+
+      <label mean-token="'create-CLIENT_RTO'" for="CLIENT_RTO" class="col-md-3 control-label">CLIENT_RTO</label>
+
+      <div class="col-md-9">
+        <textarea name="CLIENT_RTO" data-ng-model="busiapp.CLIENT_RTO" id="CLIENT_RTO" cols="100" rows="1" placeholder="CLIENT_RTO" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.CLIENT_RTO.$invalid" class="help-block">
+          <p ng-show="busiappForm.CLIENT_RTO.$error.required">CLIENT_RTO is required</p>
+        </div>
+      </div>
+    </div><!-- CLIENT_RTO -->
+
+    <!-- PROCESS -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.PROCESS.$invalid }">
+
+      <label mean-token="'create-PROCESS'" for="PROCESS" class="col-md-3 control-label">PROCESS</label>
+
+      <div class="col-md-9">
+        <textarea name="PROCESS" data-ng-model="busiapp.PROCESS" id="PROCESS" cols="100" rows="1" placeholder="PROCESS" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.PROCESS.$invalid" class="help-block">
+          <p ng-show="busiappForm.PROCESS.$error.required">PROCESS is required</p>
+        </div>
+      </div>
+    </div><!-- PROCESS -->
+
+    <!-- IT_CORE_SERVICE -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.IT_CORE_SERVICE.$invalid }">
+
+      <label mean-token="'create-IT_CORE_SERVICE'" for="IT_CORE_SERVICE" class="col-md-3 control-label">IT_CORE_SERVICE</label>
+
+      <div class="col-md-9">
+        <textarea name="IT_CORE_SERVICE" data-ng-model="busiapp.IT_CORE_SERVICE" id="IT_CORE_SERVICE" cols="100" rows="1" placeholder="IT_CORE_SERVICE" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.IT_CORE_SERVICE.$invalid" class="help-block">
+          <p ng-show="busiappForm.IT_CORE_SERVICE.$error.required">IT_CORE_SERVICE is required</p>
+        </div>
+      </div>
+    </div><!-- IT_CORE_SERVICE -->
+
+    <!-- INFORMATION_CLASSIFICATION -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.INFORMATION_CLASSIFICATION.$invalid }">
+
+      <label mean-token="'create-INFORMATION_CLASSIFICATION'" for="INFORMATION_CLASSIFICATION" class="col-md-3 control-label">INFORMATION_CLASSIFICATION</label>
+
+      <div class="col-md-9">
+        <textarea name="INFORMATION_CLASSIFICATION" data-ng-model="busiapp.INFORMATION_CLASSIFICATION" id="INFORMATION_CLASSIFICATION" cols="100" rows="1" placeholder="INFORMATION_CLASSIFICATION" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.INFORMATION_CLASSIFICATION.$invalid" class="help-block">
+          <p ng-show="busiappForm.INFORMATION_CLASSIFICATION.$error.required">INFORMATION_CLASSIFICATION is required</p>
+        </div>
+      </div>
+    </div><!-- INFORMATION_CLASSIFICATION -->
+
+    <!-- COMPLIANCE_REQUIREMENTS -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.COMPLIANCE_REQUIREMENTS.$invalid }">
+
+      <label mean-token="'create-COMPLIANCE_REQUIREMENTS'" for="COMPLIANCE_REQUIREMENTS" class="col-md-3 control-label">COMPLIANCE_REQUIREMENTS</label>
+
+      <div class="col-md-9">
+        <textarea name="COMPLIANCE_REQUIREMENTS" data-ng-model="busiapp.COMPLIANCE_REQUIREMENTS" id="COMPLIANCE_REQUIREMENTS" cols="100" rows="1" placeholder="COMPLIANCE_REQUIREMENTS" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.COMPLIANCE_REQUIREMENTS.$invalid" class="help-block">
+          <p ng-show="busiappForm.COMPLIANCE_REQUIREMENTS.$error.required">COMPLIANCE_REQUIREMENTS is required</p>
+        </div>
+      </div>
+    </div><!-- COMPLIANCE_REQUIREMENTS -->
+
+    <!-- LINE_OF_BUSINESS -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.LINE_OF_BUSINESS.$invalid }">
+
+      <label mean-token="'create-LINE_OF_BUSINESS'" for="LINE_OF_BUSINESS" class="col-md-3 control-label">LINE_OF_BUSINESS</label>
+
+      <div class="col-md-9">
+        <textarea name="LINE_OF_BUSINESS" data-ng-model="busiapp.LINE_OF_BUSINESS" id="LINE_OF_BUSINESS" cols="100" rows="1" placeholder="LINE_OF_BUSINESS" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.LINE_OF_BUSINESS.$invalid" class="help-block">
+          <p ng-show="busiappForm.LINE_OF_BUSINESS.$error.required">LINE_OF_BUSINESS is required</p>
+        </div>
+      </div>
+    </div><!-- LINE_OF_BUSINESS -->
+
+    <!-- CLIENT_OWNER -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.CLIENT_OWNER.$invalid }">
+
+      <label mean-token="'create-CLIENT_OWNER'" for="CLIENT_OWNER" class="col-md-3 control-label">CLIENT_OWNER</label>
+
+      <div class="col-md-9">
+        <textarea name="CLIENT_OWNER" data-ng-model="busiapp.CLIENT_OWNER" id="CLIENT_OWNER" cols="100" rows="1" placeholder="CLIENT_OWNER" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.CLIENT_OWNER.$invalid" class="help-block">
+          <p ng-show="busiappForm.CLIENT_OWNER.$error.required">CLIENT_OWNER is required</p>
+        </div>
+      </div>
+    </div><!-- CLIENT_OWNER -->
+
+    <!-- MANAGED_BY -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.MANAGED_BY.$invalid }">
+
+      <label mean-token="'create-MANAGED_BY'" for="MANAGED_BY" class="col-md-3 control-label">MANAGED_BY</label>
+
+      <div class="col-md-9">
+        <textarea name="MANAGED_BY" data-ng-model="busiapp.MANAGED_BY" id="MANAGED_BY" cols="100" rows="1" placeholder="MANAGED_BY" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.MANAGED_BY.$invalid" class="help-block">
+          <p ng-show="busiappForm.MANAGED_BY.$error.required">MANAGED_BY is required</p>
+        </div>
+      </div>
+    </div><!-- MANAGED_BY -->
+
+    <!-- IT_LEAD -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.IT_LEAD.$invalid }">
+
+      <label mean-token="'create-IT_LEAD'" for="IT_LEAD" class="col-md-3 control-label">IT_LEAD</label>
+
+      <div class="col-md-9">
+        <textarea name="IT_LEAD" data-ng-model="busiapp.IT_LEAD" id="IT_LEAD" cols="100" rows="1" placeholder="IT_LEAD" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.IT_LEAD.$invalid" class="help-block">
+          <p ng-show="busiappForm.IT_LEAD.$error.required">IT_LEAD is required</p>
+        </div>
+      </div>
+    </div><!-- IT_LEAD -->
+
+    <!-- IT_DIRECTOR -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.IT_DIRECTOR.$invalid }">
+
+      <label mean-token="'create-IT_DIRECTOR'" for="IT_DIRECTOR" class="col-md-3 control-label">IT_DIRECTOR</label>
+
+      <div class="col-md-9">
+        <textarea name="IT_DIRECTOR" data-ng-model="busiapp.IT_DIRECTOR" id="IT_DIRECTOR" cols="100" rows="1" placeholder="IT_DIRECTOR" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.IT_DIRECTOR.$invalid" class="help-block">
+          <p ng-show="busiappForm.IT_DIRECTOR.$error.required">IT_DIRECTOR is required</p>
+        </div>
+      </div>
+    </div><!-- IT_DIRECTOR -->
+
+    <!-- IT_GROUP -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.IT_GROUP.$invalid }">
+
+      <label mean-token="'create-IT_GROUP'" for="IT_GROUP" class="col-md-3 control-label">IT_GROUP</label>
+
+      <div class="col-md-9">
+        <textarea name="IT_GROUP" data-ng-model="busiapp.IT_GROUP" id="IT_GROUP" cols="100" rows="1" placeholder="IT_GROUP" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.IT_GROUP.$invalid" class="help-block">
+          <p ng-show="busiappForm.IT_GROUP.$error.required">IT_GROUP is required</p>
+        </div>
+      </div>
+    </div><!-- IT_GROUP -->
+
+    <!-- IT_SME -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.IT_SME.$invalid }">
+
+      <label mean-token="'create-IT_SME'" for="IT_SME" class="col-md-3 control-label">IT_SME</label>
+
+      <div class="col-md-9">
+        <textarea name="IT_SME" data-ng-model="busiapp.IT_SME" id="IT_SME" cols="100" rows="1" placeholder="IT_SME" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.IT_SME.$invalid" class="help-block">
+          <p ng-show="busiappForm.IT_SME.$error.required">IT_SME is required</p>
+        </div>
+      </div>
+    </div><!-- IT_SME -->
+
+    <!-- IT_SME_BU -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.IT_SME_BU.$invalid }">
+
+      <label mean-token="'create-IT_SME_BU'" for="IT_SME_BU" class="col-md-3 control-label">IT_SME_BU</label>
+
+      <div class="col-md-9">
+        <textarea name="IT_SME_BU" data-ng-model="busiapp.IT_SME_BU" id="IT_SME_BU" cols="100" rows="1" placeholder="IT_SME_BU" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.IT_SME_BU.$invalid" class="help-block">
+          <p ng-show="busiappForm.IT_SME_BU.$error.required">IT_SME_BU is required</p>
+        </div>
+      </div>
+    </div><!-- IT_SME_BU -->
+
+    <!-- NETWORK -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.NETWORK.$invalid }">
+
+      <label mean-token="'create-NETWORK'" for="NETWORK" class="col-md-3 control-label">NETWORK</label>
+
+      <div class="col-md-9">
+        <textarea name="NETWORK" data-ng-model="busiapp.NETWORK" id="NETWORK" cols="100" rows="1" placeholder="NETWORK" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.NETWORK.$invalid" class="help-block">
+          <p ng-show="busiappForm.NETWORK.$error.required">NETWORK is required</p>
+        </div>
+      </div>
+    </div><!-- NETWORK -->
+
+    <!-- PRIMARY_DC -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.PRIMARY_DC.$invalid }">
+
+      <label mean-token="'create-PRIMARY_DC'" for="PRIMARY_DC" class="col-md-3 control-label">PRIMARY_DC</label>
+
+      <div class="col-md-9">
+        <textarea name="PRIMARY_DC" data-ng-model="busiapp.PRIMARY_DC" id="PRIMARY_DC" cols="100" rows="1" placeholder="PRIMARY_DC" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.PRIMARY_DC.$invalid" class="help-block">
+          <p ng-show="busiappForm.PRIMARY_DC.$error.required">PRIMARY_DC is required</p>
+        </div>
+      </div>
+    </div><!-- PRIMARY_DC -->
+
+    <!-- SECONDARY_DC -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.SECONDARY_DC.$invalid }">
+
+      <label mean-token="'create-SECONDARY_DC'" for="SECONDARY_DC" class="col-md-3 control-label">SECONDARY_DC</label>
+
+      <div class="col-md-9">
+        <textarea name="SECONDARY_DC" data-ng-model="busiapp.SECONDARY_DC" id="SECONDARY_DC" cols="100" rows="1" placeholder="SECONDARY_DC" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.SECONDARY_DC.$invalid" class="help-block">
+          <p ng-show="busiappForm.SECONDARY_DC.$error.required">SECONDARY_DC is required</p>
+        </div>
+      </div>
+    </div><!-- SECONDARY_DC -->
+
+    <!-- ONBOARD_FLAG -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.ONBOARD_FLAG.$invalid }">
+
+      <label mean-token="'create-ONBOARD_FLAG'" for="ONBOARD_FLAG" class="col-md-3 control-label">ONBOARD_FLAG</label>
+
+      <div class="col-md-9">
+        <textarea name="ONBOARD_FLAG" data-ng-model="busiapp.ONBOARD_FLAG" id="ONBOARD_FLAG" cols="100" rows="1" placeholder="ONBOARD_FLAG" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.ONBOARD_FLAG.$invalid" class="help-block">
+          <p ng-show="busiappForm.ONBOARD_FLAG.$error.required">ONBOARD_FLAG is required</p>
+        </div>
+      </div>
+    </div><!-- ONBOARD_FLAG -->
+
+    <!-- DISPLAY_NAME -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.DISPLAY_NAME.$invalid }">
+
+      <label mean-token="'create-DISPLAY_NAME'" for="DISPLAY_NAME" class="col-md-3 control-label">DISPLAY_NAME</label>
+
+      <div class="col-md-9">
+        <textarea name="DISPLAY_NAME" data-ng-model="busiapp.DISPLAY_NAME" id="DISPLAY_NAME" cols="100" rows="1" placeholder="DISPLAY_NAME" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.DISPLAY_NAME.$invalid" class="help-block">
+          <p ng-show="busiappForm.DISPLAY_NAME.$error.required">DISPLAY_NAME is required</p>
+        </div>
+      </div>
+    </div><!-- DISPLAY_NAME -->
+
+    <!-- ASSET_DESCRIPTION -->
+    <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.ASSET_DESCRIPTION.$invalid }">
+
+      <label mean-token="'create-ASSET_DESCRIPTION'" for="ASSET_DESCRIPTION" class="col-md-3 control-label">ASSET_DESCRIPTION</label>
+
+      <div class="col-md-9">
+        <textarea name="ASSET_DESCRIPTION" data-ng-model="busiapp.ASSET_DESCRIPTION" id="ASSET_DESCRIPTION" cols="300" rows="10" placeholder="ASSET_DESCRIPTION" class="form-control"></textarea>
+        <div ng-show="submitted && busiappForm.ASSET_DESCRIPTION.$invalid" class="help-block">
+          <p ng-show="busiappForm.ASSET_DESCRIPTION.$error.required">ASSET_DESCRIPTION is required</p>
+        </div>
+      </div>
+    </div><!-- ASSET_DESCRIPTION -->
+
+
+<!-- OLD SECTION 
     <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.SERVICE_OR_APPLICATION_NAME.$invalid }">
       <label mean-token="'edit-SERVICE_OR_APPLICATION_NAME'" for="SERVICE_OR_APPLICATION_NAME" class="col-md-2 control-label">Application Name</label>
       <div class="col-md-10">
@@ -11,7 +366,6 @@
 
     </div>
 
-<!--
      <div class="form-group" ng-class="{ 'has-error' : submitted && busiappForm.content.$invalid }">
       <label mean-token="'edit-content'" for="content" class="col-md-2 control-label">Content</label>
       <div class="col-md-10">
